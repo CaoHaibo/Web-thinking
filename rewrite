@@ -1,0 +1,239 @@
+#rewrite#
+
+rewrite ^(.*)/((?!johnson|neo|boshilun|shikang|haichang|boshilunhuliye|leipeng
+            |rayban|calvinklein|bolon|aierkanghuliye|sigo|CooperVision|weikang
+            |baishikang|ports|ck|baosheng|baolong|kelaibo|quannenghuliye|haichanghuliye
+            |weikanghuliye|kelaibohuliye|shikanghuliye|ptwohuliye|lianjingling|igelhlyhuliye
+            |keliyan|kubo|keershi|bluefairy|belmore|vogue|newsunframe|yashi|angeer|snoopy
+            |pailimeng|liuchuanyilang|domina|basto|newsun|helenkeller|bluepoint|haitun|
+            parim|papaxiong|bolaiya|seed|lenbert|boshidunhuliye|youneng)\w+)/(s_\w+).html 
+            $1/Products/SeriesList.aspx?SeoBrandName=$2&SerialName=$3 break;
+            
+            
+            $1  host  #In there is www.vsigo.cn#
+            $2  sigo brand  
+            $3  commodity page  
+
+
+
+
+rewrite ^(.*)/((?!johnson|neo|boshilun|shikang|haichang|boshilunhuliye|leipeng|rayban|calvinklein
+            |bolon|aierkanghuliye|sigo|CooperVision|weikang|baishikang|ports|ck|baosheng|baolong
+            |kelaibo|quannenghuliye|haichanghuliye|weikanghuliye|kelaibohuliye|shikanghuliye|ptwohuliye
+            |lianjingling|igelhlyhuliye|keliyan|kubo|keershi|bluefairy|belmore|vogue|newsunframe|yashi
+            |angeer|snoopy|pailimeng|liuchuanyilang|domina|basto|newsun|helenkeller|bluepoint|haitun|parim
+            |papaxiong|bolaiya|seed|lenbert|boshidunhuliye|youneng)\w+)/(s_\w+)/-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+).html 
+            $1/Products/SeriesList.aspx?SerialName=$3&SeoBrandName=$3&Price=$4&OtherProperty=$5&Size=$6&Type=$7&page=$8&orderBy=$9&ProBrand=$10 break;
+
+        rewrite rule
+            $1  host 
+            $2  sigo brand
+            $3  Seo Brand Name
+            $4  Price
+            $6  Siz
+            $7  Type
+            $8  page
+            $9  order
+            $10 ProBrand
+            
+            
+  ALL RULE
+            
+  rewrite ^(.*)/ZhuanTi/sanguang.htm$ $1/ZhuanTi/sanguang.html permanent;
+	rewrite ^(.*)/ZhuanTi/sanguang.html$ $1/yinxingyanjing/sanguang.html permanent;
+	rewrite ^(.*)/index.htm$ $1/ permanent;
+	rewrite ^(.*)/zuhe4187.html$ $1/zuhe4162.html permanent;
+
+	# For Brand 301
+	rewrite (?i)^(.*)/BESCON/$ $1/baishikang/ permanent;
+	rewrite (?i)^(.*)/BESCON$ $1/baishikang/ permanent;
+	rewrite ^(.*)/qiangsheng/$ $1/johnson/ permanent;
+	rewrite ^(.*)/qiangsheng$ $1/johnson/ permanent;
+
+	rewrite ^(.*)/(\w+)/-(.*).html$ $1/$2/$3.html break;
+
+	# Defend your computer from some worm attacks
+	rewrite .*(?:global.asa|default\.ida|root\.exe|\.\.).* . break;
+
+	rewrite ^(.*)/MemAdmin/My.aspx$ $1/MemAdmin/MyHome.aspx break;
+
+	rewrite ^(.*)/default2013.htm$ $1/ break;
+
+	rewrite (?i)^(.*)/today_zdm/$ $1/Activity/TodayZDM.aspx break;
+
+	rewrite ^(.*)/yinxingyanjing/$ $1/Products/ItemList.aspx?VChannel=yinxingyanjing break;
+	rewrite ^(.*)/yinxingyanjing$ $1/Products/ItemList.aspx?VChannel=yinxingyanjing break;
+	rewrite ^(.*)/yinxingyanjing\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yinxingyanjing break;
+	rewrite ^(.*)/yinxingyanjing/\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yinxingyanjing break;
+	rewrite ^(.*)/yinxingyanjing/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yinxingyanjing break;
+
+	rewrite ^(.*)/meitong/$ $1/Products/ItemList.aspx?VChannel=meitong break;
+	rewrite ^(.*)/meitong$ $1/Products/ItemList.aspx?VChannel=meitong break;
+	rewrite ^(.*)/meitong\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=meitong break;
+	rewrite ^(.*)/meitong/\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=meitong break;
+	rewrite ^(.*)/meitong/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=meitong break;
+
+	rewrite ^(.*)/yanjingjia/$ $1/Products/ItemList.aspx?VChannel=yanjingjia break;
+	rewrite ^(.*)/yanjingjia$ $1/Products/ItemList.aspx?VChannel=yanjingjia break;
+	rewrite ^(.*)/yanjingjia\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yanjingjia break;
+	rewrite ^(.*)/yanjingjia/\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yanjingjia break;
+	rewrite ^(.*)/yanjingjia/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yanjingjia break;
+
+	rewrite ^(.*)/taiyangjing/$ $1/Products/ItemList.aspx?VChannel=taiyangjing break;
+	rewrite ^(.*)/taiyangjing$ $1/Products/ItemList.aspx?VChannel=taiyangjing break;
+	rewrite ^(.*)/taiyangjing\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=taiyangjing break;
+	rewrite ^(.*)/taiyangjing/\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=taiyangjing break;
+	rewrite ^(.*)/taiyangjing/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=taiyangjing break;
+
+	rewrite ^(.*)/gongnengyanjing/$ $1/Products/ItemList.aspx?VChannel=yundongyanjing break;
+	rewrite ^(.*)/gongnengyanjing$ $1/Products/ItemList.aspx?VChannel=yundongyanjing break;
+	rewrite ^(.*)/gongnengyanjing\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yundongyanjing break;
+	rewrite ^(.*)/gongnengyanjing/\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yundongyanjing break;
+	rewrite ^(.*)/gongnengyanjing/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yundongyanjing break;
+
+	rewrite ^(.*)/yundongyanjing/$ $1/Products/ItemList.aspx?VChannel=yundongyanjing break;
+	rewrite ^(.*)/yundongyanjing$ $1/Products/ItemList.aspx?VChannel=yundongyanjing break;
+	rewrite ^(.*)/yundongyanjing\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yundongyanjing break;
+	rewrite ^(.*)/yundongyanjing/\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yundongyanjing break;
+	rewrite ^(.*)/yundongyanjing/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=yundongyanjing break;
+
+	rewrite ^(.*)/youyongjing/$ $1/yundongyanjing/youyongjing.html break;
+	rewrite ^(.*)/youyongjing$ $1/yundongyanjing/youyongjing.html break;
+	rewrite ^(.*)/youyongjing\?(\w*)=(.*)$ $1/yundongyanjing/youyongjing.html break;
+	rewrite ^(.*)/youyongjing/\?(\w*)=(.*)$ $1/yundongyanjing/youyongjing.html break;
+	rewrite ^(.*)/youyongjing/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/yundongyanjing/youyongjing.html break;
+
+	rewrite ^(.*)/huaxuejing/$ $1/yundongyanjing/huaxuejing.html break;
+	rewrite ^(.*)/huaxuejing$ $1/yundongyanjing/huaxuejing.html break;
+	rewrite ^(.*)/huaxuejing\?(\w*)=(.*)$ $1/yundongyanjing/huaxuejing.html break;
+	rewrite ^(.*)/huaxuejing/\?(\w*)=(.*)$ $1/yundongyanjing/huaxuejing.html break;
+	rewrite ^(.*)/huaxuejing/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/yundongyanjing/huaxuejing.html break;
+
+	rewrite ^(.*)/lanqiujing/$ $1/yundongyanjing/lanqiujing.html break;
+	rewrite ^(.*)/lanqiujing$ $1/yundongyanjing/lanqiujing.html break;
+	rewrite ^(.*)/lanqiujing\?(\w*)=(.*)$ $1/yundongyanjing/lanqiujing.html break;
+	rewrite ^(.*)/lanqiujing/\?(\w*)=(.*)$ $1/yundongyanjing/lanqiujing.html break;
+	rewrite ^(.*)/lanqiujing/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/yundongyanjing/lanqiujing.html break;
+
+	rewrite ^(.*)/laohuajing/$ $1/yundongyanjing/laohuajing.html break;
+	rewrite ^(.*)/laohuajing$ $1/yundongyanjing/laohuajing.html break;
+	rewrite ^(.*)/laohuajing\?(\w*)=(.*)$ $1/yundongyanjing/laohuajing.html break;
+	rewrite ^(.*)/laohuajing/\?(\w*)=(.*)$ $1/yundongyanjing/laohuajing.html break;
+	rewrite ^(.*)/laohuajing/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/yundongyanjing/laohuajing.html break;
+
+	#delete after 20160630
+	#rewrite ^(.*)/runyanye/$ $1/huliye/runyanye.html break;
+	#rewrite ^(.*)/runyanye$ $1/huliye/runyanye.html break;
+	#rewrite ^(.*)/runyanye\?(\w*)=(.*)$ $1/huliye/runyanye.html break;
+	#rewrite ^(.*)/runyanye/\?(\w*)=(.*)$ $1/huliye/runyanye.html break;
+	#rewrite ^(.*)/runyanye/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/huliye/runyanye.html break;
+	#delete after 20160630
+	#rewrite ^(.*)/banlvhe/$ $1/huliye/banlvhe.html break;
+	#rewrite ^(.*)/banlvhe$ $1/huliye/banlvhe.html break;
+	#rewrite ^(.*)/banlvhe\?(\w*)=(.*)$ $1/huliye/banlvhe.html break;
+	#rewrite ^(.*)/banlvhe/\?(\w*)=(.*)$ $1/huliye/banlvhe.html break;
+	#rewrite ^(.*)/banlvhe/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/huliye/banlvhe.html break;
+	
+	#add 20160630
+	rewrite ^(.*)/banlvhe$ $1/Products/ItemList.aspx?VChannel=huliye&VPara=banlvhe break;
+  rewrite ^(.*)/banlvhe/$ $1/Products/ItemList.aspx?VChannel=huliye&VPara=banlvhe break;
+  rewrite ^(.*)/banlvhe$ $1/Products/ItemList.aspx?VChannel=huliye&VPara=banlvhe break;
+  rewrite ^(.*)/runyanye/$ $1/Products/ItemList.aspx?VChannel=huliye&VPara=runyanye break;
+	
+	rewrite ^(.*)/news/Topic(\d*).html  $1/news/Topic.aspx?topicId=$2 break;
+	rewrite ^(.*)/news/Topic(.*).html $1/news/Topic.aspx?topicId=$2 break;   #The same with last one rule,but is big of rule#
+	rewrite ^(.*)/jingjia/$ $1/Products/OrtherProList.aspx?ProType=cramp break;
+	rewrite ^(.*)/jingjia$ $1/Products/OrtherProList.aspx?ProType=cramp break;
+	rewrite ^(.*)/jingjia/\?orderBy=(.*)$ $1/Products/OrtherProList.aspx?ProType=cramp&orderby=$2 break;
+	rewrite ^(.*)/jingjia\?(\w*)=(.*)$ $1/Products/OrtherProList.aspx?ProType=cramp break;
+	rewrite ^(.*)/jingjia/\?(\w*)=(.*)$ $1/Products/OrtherProList.aspx?ProType=cramp break;
+
+	rewrite ^(.*)/yanjinglian/$ $1/Products/OrtherProList.aspx?ProType=chain break;
+	rewrite ^(.*)/yanjinglian$ $1/Products/OrtherProList.aspx?ProType=chain break;
+	rewrite ^(.*)/yanjinglian/\?orderBy=(.*)$ $1/Products/OrtherProList.aspx?ProType=chain&orderby=$2 break;
+	rewrite ^(.*)/yanjinglian\?(\w*)=(.*)$ $1/Products/OrtherProList.aspx?ProType=chain break;
+	rewrite ^(.*)/yanjinglian/\?(\w*)=(.*)$ $1/Products/OrtherProList.aspx?ProType=chain break;
+
+	rewrite ^(.*)/huliye/$ $1/Products/ItemList.aspx?VChannel=huliye break;
+	rewrite ^(.*)/huliye$ $1/Products/ItemList.aspx?VChannel=huliye break;
+	rewrite ^(.*)/huliye\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=huliye break;
+	rewrite ^(.*)/huliye/\?(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=huliye break;
+	rewrite ^(.*)/huliye/\?(\w*)=(.*)&(\w*)=(.*)&(\w*)=(.*)$ $1/Products/ItemList.aspx?VChannel=huliye break;
+
+	rewrite ^(.*)/qita/$ $1/Products/ProQitalist.aspx break;
+	rewrite ^(.*)/qita$ $1/Products/ProQitalist.aspx break;
+	rewrite ^(.*)/qita\?(\w*)=(.*)$ $1/Products/ProQitalist.aspx break;
+	rewrite ^(.*)/qita/\?(\w*)=(.*)$ $1/Products/ProQitalist.aspx break;
+
+	rewrite ^(.*)/bangshidu/$ $1/Products/ProSportBrandList.aspx?SeoName=bangshidu break;
+	rewrite ^(.*)/bangshidu$ $1/Products/ProSportBrandList.aspx?SeoName=bangshidu break;
+	rewrite ^(.*)/bangshidu/-(\w*)-(\w*).html$ $1/Products/ProSportBrandList.aspx?SeoName=bangshidu&page=$2&orderBy=$3 break;
+	rewrite ^(.*)/bangshidu\?(\w*)=(.*)$ $1/Products/ProSportBrandList.aspx?SeoName=bangshidu break;
+	rewrite ^(.*)/bangshidu/\?(\w*)=(.*)$ $1/Products/ProSportBrandList.aspx?SeoName=bangshidu break;
+
+	rewrite ^(.*)/jiejia/$ $1/Products/ProSportBrandList.aspx?SeoName=jiejia break;
+	rewrite ^(.*)/jiejia$ $1/Products/ProSportBrandList.aspx?SeoName=jiejia break;
+	rewrite ^(.*)/jiejia/-(\w*)-(\w*).html$ $1/Products/ProSportBrandList.aspx?SeoName=jiejia&page=$2&orderBy=$3 break;
+	rewrite ^(.*)/jiejia\?(\w*)=(.*)$ $1/Products/ProSportBrandList.aspx?SeoName=jiejia break;
+	rewrite ^(.*)/jiejia/\?(\w*)=(.*)$ $1/Products/ProSportBrandList.aspx?SeoName=jiejia break;
+
+	rewrite ^(.*)/okey/$ $1/Products/ProSportBrandList.aspx?SeoName=okey break;
+	rewrite ^(.*)/okey$ $1/Products/ProSportBrandList.aspx?SeoName=okey break;
+	rewrite ^(.*)/okey/-(\w*)-(\w*).html$ $1/Products/ProSportBrandList.aspx?SeoName=okey&page=$2&orderBy=$3 break;
+	rewrite ^(.*)/okey\?(\w*)=(.*)$ $1/Products/ProSportBrandList.aspx?SeoName=okey break;
+	rewrite ^(.*)/okey/\?(\w*)=(.*)$ $1/Products/ProSportBrandList.aspx?SeoName=okey break;
+
+	rewrite ^(.*)/virtual/$ $1/Virtual/Default.aspx;
+	rewrite ^(.*)/Virtual$ $1/Virtual/Default.aspx;
+
+	rewrite ^(.*)/job/$ $1/job/index.htm break;
+	rewrite ^(.*)/job $1/job/index.htm break;
+        
+#add 0318
+  rewrite ^(.*)/OrtherProCareSolution-3780-1.html$ $1/item5757.html permanent;
+  rewrite ^(.*)/ZhuanTi/huansuanbiao-xin.htm$ $1/ZhuanTi/huansuanbiao.htm permanent;
+
+	rewrite ^(.*)/3dglass/$ $1/Products/ProSportsList.aspx?ProType=3dglass break;
+	rewrite ^(.*)/3dglass$ $1/Products/ProSportsList.aspx?ProType=3dglass break;
+	rewrite ^(.*)/3dglass$/?Page=(\w+)&OrderBy=(\w+)$ $1/ProSportsList.aspx?OrderBy=$3&Page=$2&ProType=3dglass break;
+	rewrite ^(.*)/3dglass$/?OrderBy=(\w+)$ $1/ProSportsList.aspx?OrderBy=$2&ProType=3dglass break;
+	rewrite ^(.*)/3dglass$/?Page=(\w+)$ $1/ProSportsList.aspx?Page=$2&ProType=3dglass break;
+	rewrite ^(.*)/item(\d+).html $1/Products/ItemInfo.aspx?ItemID=$2 break;
+	rewrite ^(.*)/Contacts(\d+).html $1/Products/ItemInfo.aspx?ProID=$2 break;
+	rewrite ^(.*)/contacts(\d+).html $1/Products/ItemInfo.aspx?ProID=$2 break;
+	rewrite ^(.*)/OrtherPro(.*)-(\d+)-(\d+).html $1/Products/ItemInfo.aspx?ProID=$3 break;
+	rewrite ^(.*)/frame(\d+).html $1/Products/ItemInfo.aspx?ProID=$2 break;
+	rewrite ^(.*)/Frame(\d+).html $1/Products/ItemInfo.aspx?ProID=$2 break;
+	rewrite ^(.*)/SunGlass(\d+).html $1/Products/ItemInfo.aspx?ProID=$2 break;
+	rewrite ^(.*)/sunglass(\d+).html $1/Products/ItemInfo.aspx?ProID=$2 break;
+	rewrite ^(.*)/Lenses(\d+).html</LookFor> $1/Products/ItemInfo.aspx?ProID=$2 break;
+	rewrite ^(.*)/zuhe(\d+).html $1/Products/ItemSuit.aspx?ItemID=$2 break;
+	rewrite ^(.*)/news/News(\d+).html $1/news/News.aspx?NewsID=$2 break;
+	rewrite ^(.*)/news/NewsInfo.html $1/News/NewsList.aspx  break;
+	rewrite ^(.*)/news/zixun/Next(\d+).html $1/News/NewsList.aspx?Page=$2 break;
+	rewrite ^(.*)/news/zixun/ConNews(\d+)-(\d+).html $1/News/NewsList.aspx?ClassID=$2&Page=$3 break;
+	rewrite ^(.*)/news/search/Next(\d+).html $1/News/News_Search.aspx?Page=$2 break;
+	rewrite ^(.*)/news/newsmap/Next(\d+)-(\d+).html $1/News/newslist.aspx?ClassID=$1&page=$3 break;
+	rewrite ^(.*)/news/ConNews(\d+).html $1/News/NewsList.aspx?ClassID=$2 break;
+	rewrite ^(.*)/news/Sitemape.html $1/News/Mapnews.aspx break;
+	rewrite ^(.*)/Comments(\d+).html $1/Comments/Comments.aspx?ProID=$2  break;
+	rewrite ^(.*)/SimpleModel(\d+).html $1/Products/SimpleModel.aspx?ProID=$2 break;
+	rewrite ^(.*)/TryPic(\d+).html $1/Virtual/VirtualShow.aspx?TryPicID=$2 break;
+	rewrite ^(.*)/HelpCenter(\d+).html $1/Article/HelpShow.aspx?NewsID=$2 break;
+	rewrite ^(.*)/sitemap.html  $1/SiteMap.aspx  break;
+	rewrite ^(.*)/Help.html $1/Article/Help.aspx break;
+	rewrite ^(.*)/ZhuanTi/sanguang.html $1/Products/SanGuang.aspx break;
+	rewrite ^(.*)/Products/sanguang-(\d+).html $1/Products/SanGuang.aspx?page=$2 break;
+	rewrite ^(.*)/Search-(.*)-(.*)-(\d+)-(.*).html $1/Products/SearchList.aspx?Keywords=$2&ProType=$3&page=$4&OrderBy=$5 break;
+	rewrite ^(.*)/SearchList-(.*)-(.*)-(.*)-(.*)-(.*)-(\d+).html $1/Products/SearchListNew.aspx?keywords=$2&grouplabel=$3&attrlabel=$4&conditions=$5&sort=$6&page=$7 break;
+
+
+	#add by follow 20151214 for user login
+	rewrite (?i)^/account/(Login|Register).html$ /account/$1.aspx break;
+	#end add
+
+	rewrite (?i)^/(?!account|shoping)([a-zA-Z]+)/([\w-]+).html$       /Products/ItemList.aspx?VChannel=$1&VPara=$2 break;
+	rewrite ^(.*)/((?!johnson|neo|boshilun|shikang|haichang|boshilunhuliye|leipeng|rayban|calvinklein|bolon|aierkanghuliye|sigo|CooperVision|weikang|baishikang|ports|ck|baosheng|baolong|kelaibo|quannenghuliye|haichanghuliye|weikanghuliye|kelaibohuliye|shikanghuliye|ptwohuliye|lianjingling|igelhlyhuliye|keliyan|kubo|keershi|bluefairy|belmore|vogue|newsunframe|yashi|angeer|snoopy|pailimeng|liuchuanyilang|domina|basto|newsun|helenkeller|bluepoint|haitun|parim|papaxiong|bolaiya|seed|lenbert|boshidunhuliye|youneng)\w+)/(s_\w+).html $1/Products/SeriesList.aspx?SeoBrandName=$2&SerialName=$3 break;
+	rewrite ^(.*)/((?!johnson|neo|boshilun|shikang|haichang|boshilunhuliye|leipeng|rayban|calvinklein|bolon|aierkanghuliye|sigo|CooperVision|weikang|baishikang|ports|ck|baosheng|baolong|kelaibo|quannenghuliye|haichanghuliye|weikanghuliye|kelaibohuliye|shikanghuliye|ptwohuliye|lianjingling|igelhlyhuliye|keliyan|kubo|keershi|bluefairy|belmore|vogue|newsunframe|yashi|angeer|snoopy|pailimeng|liuchuanyilang|domina|basto|newsun|helenkeller|bluepoint|haitun|parim|papaxiong|bolaiya|seed|lenbert|boshidunhuliye|youneng)\w+)/(s_\w+)/-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+).html $1/Products/SeriesList.aspx?SerialName=$3&SeoBrandName=$3&Price=$4&OtherProperty=$5&Size=$6&Type=$7&page=$8&orderBy=$9&ProBrand=$10 break;
+	rewrite (?i)^(.*)/([a-zA-Z]+)/$       $1/Products/ItemList.aspx?VChannel=$2 break;
+

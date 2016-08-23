@@ -1,0 +1,20 @@
+当 IIS7/7.5 收到的请求头的长度超过16K（默认值），就会引发"Bad Request - Request Too Long. HTTP Error 400. The size of the request headers is too long."的错误。
+博客园服务器曾遭遇过这个问题，我为此写过一篇博文（cnzz统计代码引起的Bad Request - Request Too Long），问题的原因是第三方统计服务cnzz的统计代码写入大量的cookie，请求时会携带着这些cookie，从而造成请求头长度超过限制。
+
+根据IIS官方论坛的帖子（HTTP 400. The size of the request headers is too long），16K的请求头/请求长度限制由是注册表（HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\HTTP\Parameters）中的两个参数 MaxFieldLength（请求头） 与 MaxRequestBytes（请求头与请求体） 决定的。所以，要从这两个参数下手。
+通过微软官方文档（http://support.microsoft.com/kb/820129） 进一步了解MaxRequestBytes与MaxFieldLength：
+MaxFieldLength - Sets an upper limit for each header.
+用于设置每一个请求头的字节数上限（默认16K）。
+MaxRequestBytes - Determines the upper limit for the total size of the Request line and the headers.
+用于设置请求行（请求体）与请求头的总字节数上限（默认16K）。
+解决方案：
+
+运行regedit，进入 HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\HTTP\Parameters ，
+1. 添加类型为 DWORD(32-bit)、名为 MaxFieldLength、值为十进制32768的项目；
+2. 添加类型为 DWORD(32-bit)、名为 MaxRequestBytes、值为十进制32768的项目。
+添加好了，最简单的方法就是重启，可是对于服务器，最不想做的就是重启。
+找到了一个更简单的方法，只需三个命令：
+net stop http
+net start http
+iisreset
+这个方法已经在服务器上通过实际验证。
